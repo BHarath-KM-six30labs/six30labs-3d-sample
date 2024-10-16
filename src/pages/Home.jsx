@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState } from "react";
 import cards from "./constant";
 import ComponentSvg1 from "./ComponentSvg1";
 import ComponentSvg2 from "./ComponentSvg2";
+import Carousel from "./Carousel";
+import { useWindowWidth } from "../utils/hooks/useWindowWidth";
 
 const Card = ({ imageSrc, altText, title, description }) => {
   return (
@@ -46,47 +48,62 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const width = useWindowWidth();
+  console.log(width, "width");
   return (
     <div className="font-sans">
       {/* Vertical Scroll Section */}
-      <section className="flex   h-screen  p-8">
-        <div className="flex flex-col flex-1 items-center justify-center">
+      <section className={`flex    p-8 ${width < 1050 ? "flex-col mb-10" : "h-screen"}`}>
+        <div className="flex flex-col flex-1 items-center justify-center ">
           <h2 className="text-3xl font-bold mb-4">Vertical Scroll Section</h2>
           <p className="mb-4">This section scrolls vertically as normal.</p>
-          <p className="mb-4">
+          <p className="">
             Keep scrolling down to see the horizontal section.
           </p>
         </div>
-        <div className="w-20 h-20 flex-1">
+        <div className={`w-20 h-20 flex-1 ${width < 1050 ? "flex-col mt-20 items-center justify-center w-screen border  " : ""}`}>
           <ComponentSvg2 />
         </div>
       </section>
 
       {/* Horizontal Scroll Section Container */}
-      <div ref={containerRef} style={{ height: "400vh" }} className="relative">
-        <div
-          ref={horizontalRef}
-          className="sticky top-0 h-screen overflow-hidden"
-        >
+      {width < 1050 ? (
+        <div className="mb-20">
+
+          <Carousel />
+        </div>
+      ) : (
+        <>
           <div
-            className="flex transition-transform duration-100 ease-out"
-            style={{
-              transform: `translateX(-${scrollingProgress * 80}%)`,
-              width: "500%", // 100% * 5 sections
-            }}
+            ref={containerRef}
+            style={{ height: "400vh" }}
+            className="relative"
           >
-            {cards.map((card, index) => (
-              <Card key={index} {...card} />
-            ))}
-            {/* {cards.map((item , index) => (
+            <div
+              ref={horizontalRef}
+              className="sticky top-0 h-screen overflow-hidden"
+            >
+              <div
+                className="flex transition-transform duration-100 ease-out"
+                style={{
+                  transform: `translateX(-${scrollingProgress * 80}%)`,
+                  width: "500%", // 100% * 5 sections
+                }}
+              >
+                {cards.map((card, index) => (
+                  <Card key={index} {...card} />
+                ))}
+                {/* {cards.map((item , index) => (
               // <div key={index} className="w-screen h-screen flex-shrink-0 bg-green-100 p-8 border border-green-300">
               //   <h2 className="text-3xl font-bold mb-4">{item.title}</h2>
               //   <p>{item.description}</p>
               // </div>
             ))} */}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
 
       {/* Normal Scroll Section */}
       <section className="min-h-screen  p-8">
