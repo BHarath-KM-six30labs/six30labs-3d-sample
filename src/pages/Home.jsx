@@ -61,7 +61,7 @@ export default function Home() {
             Keep scrolling down to see the horizontal section.
           </p>
         </div>
-        <div className={`w-20 h-20 flex-1 ${width < 1050 ? "flex-col mt-20 items-center justify-center w-screen border  " : ""}`}>
+        <div className={`flex-col flex-1 ${width < 1050 ? "flex mt-20  mx-auto   " : ""}`}>
           <ComponentSvg2 />
         </div>
       </section>
