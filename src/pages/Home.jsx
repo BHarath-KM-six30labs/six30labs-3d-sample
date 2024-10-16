@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import cards from "./constant";
 import ComponentSvg1 from "./ComponentSvg1";
+import ComponentSvg2 from "./ComponentSvg2";
 
 const Card = ({ imageSrc, altText, title, description }) => {
   return (
@@ -48,12 +49,17 @@ export default function Home() {
   return (
     <div className="font-sans">
       {/* Vertical Scroll Section */}
-      <section className="h-screen  p-8">
-        <h2 className="text-3xl font-bold mb-4">Vertical Scroll Section</h2>
-        <p className="mb-4">This section scrolls vertically as normal.</p>
-        <p className="mb-4">
-          Keep scrolling down to see the horizontal section.
-        </p>
+      <section className="flex   h-screen  p-8">
+        <div className="flex flex-col flex-1 items-center justify-center">
+          <h2 className="text-3xl font-bold mb-4">Vertical Scroll Section</h2>
+          <p className="mb-4">This section scrolls vertically as normal.</p>
+          <p className="mb-4">
+            Keep scrolling down to see the horizontal section.
+          </p>
+        </div>
+        <div className="w-20 h-20 flex-1">
+          <ComponentSvg2 />
+        </div>
       </section>
 
       {/* Horizontal Scroll Section Container */}
