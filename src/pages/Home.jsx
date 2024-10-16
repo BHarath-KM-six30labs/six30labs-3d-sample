@@ -56,12 +56,12 @@ export default function Home() {
       <section className={`flex    p-8 ${width < 1050 ? "flex-col mb-10" : "h-screen"}`}>
         <div className="flex flex-col flex-1 items-center justify-center ">
           <h2 className="text-3xl font-bold mb-4">Vertical Scroll Section</h2>
-          <p className="mb-4">This section scrolls vertically as normal.</p>
-          <p className="">
+          <p className="mb-4 ">This section scrolls vertically as normal.</p>
+          <p className="text-center">
             Keep scrolling down to see the horizontal section.
           </p>
         </div>
-        <div className={`flex-col flex-1 ${width < 1050 ? "flex mt-20  mx-auto   " : ""}`}>
+        <div className={`flex-col flex-1 ${width < 1050 ? "flex mt-20  mx-auto w-52 h-52  " : ""}`}>
           <ComponentSvg2 />
         </div>
       </section>

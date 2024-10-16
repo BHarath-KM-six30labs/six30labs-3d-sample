@@ -6,8 +6,8 @@ function ComponentSvg2() {
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        width="300.000000pt"
-        height="419.000000pt"
+        // width="300.000000pt"
+        // height="419.000000pt"
         viewBox="0 0 300.000000 419.000000"
         preserveAspectRatio="xMidYMid meet"
       >
