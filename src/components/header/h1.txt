@@ -1,0 +1,125 @@
+import React, { useState } from "react";
+import reverbianLogo from "../../assets/reuerbian-logo-black.png";
+import { motion } from "framer-motion";
+
+const DURATION = 0.25;
+const STAGGER = 0.05;
+
+const FlipLink = ({ children, href }) => {
+  return (
+    <motion.a
+      href={href}
+      className="relative inline-block overflow-hidden mb-5 whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-5xl"
+      initial="initial"
+      whileHover="hovered"
+    >
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            key={i}
+            variants={{
+              initial: { y: 0 },
+              hovered: { y: "-100%" },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            key={i}
+            variants={{
+              initial: { y: "100%" },
+              hovered: { y: 0 },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+    </motion.a>
+  );
+};
+
+function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <div className="flex justify-between px-8 items-center h-28">
+        <img
+          src={reverbianLogo}
+          alt="Logo"
+          className="w-56 h-12"
+        />
+        <div className="flex items-center justify-center gap-2">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex flex-col items-center justify-center border border-black rounded py-4 px-3"
+          >
+            <span className="block w-4 h-[2px] bg-black mb-1"></span>
+            <span className="block w-4 h-[2px] bg-black"></span>
+          </button>
+          <button className="border border-black ml-2 px-4 py-2 rounded bg-black text-white">
+            Contact
+          </button>
+          {isOpen && (
+            <div className="w-full fixed top-0 left-0 h-screen z-50 bg-white flex flex-col">
+              <div className="flex justify-between px-8 items-center h-28">
+                <img
+                  src={reverbianLogo}
+                  alt="Logo"
+                  className="w-56 h-12"
+                />
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex flex-col items-center justify-center border border-black rounded py-4 px-3"
+                >
+                  <span className="block w-4 h-[2px] bg-black mb-1"></span>
+                  <span className="block w-4 h-[2px] bg-black"></span>
+                </button>
+              </div>
+              <div className="flex-grow flex flex-col justify-center px-8">
+                <ul className="space-y-3">
+                  {[
+                    "Home",
+                    "Resources",
+                    "About Us",
+                    "Services",
+                    "Contact Us",
+                  ].map((item) => (
+                    <li key={item} className="text-xl">
+                      <FlipLink
+                        href={`${
+                          item === "Home" ? "/" : item.toLowerCase().replace(" ", "-")
+                        }`}
+                      >
+                        {item}
+                      </FlipLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Header;

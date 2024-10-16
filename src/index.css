@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Numans&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .left-unset {
+      left: unset !important;
+    }
+    .transform-unset {
+      transform: unset !important;
+    }
+  }
+}
+
+:root {
+  /* --primary: #2e37fe;
+  --black: #000;
+  --white: #fff;
+  --darkGary: "#9A9A9A"; */
+
+  font-family: "Inter", sans-serif;
+  /* font-size: 62.5%;
+  line-height: 1.5;
+  font-weight: 400; */
+
+  /* color-scheme: light dark; */
+  /* color: var(--black);
+  background-color: var(--white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; */
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Think";
+  /* src: url('./assets/fonts/Think-Medium.otf') format('opentype'); */
+  src: url("https://d33m3g343o7hgb.cloudfront.net/Navadesignlabs-HTML/assets/fonts/Think-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Think";
+  /* src: url('./assets/fonts/Think-Bold.otf') format('opentype'); */
+  src: url("https://d33m3g343o7hgb.cloudfront.net/Navadesignlabs-HTML/assets/fonts/Think-Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+.font-roboto {
+  font-family: "Roboto", sans-serif;
+}
+.font-think {
+  font-family: "Think", sans-serif;
+  font-weight: 500;
+}
+.font-think-bold {
+  font-family: "Think", sans-serif;
+  font-weight: 700;
+}
+
+.contact-btn {
+  position: relative;
+
+  overflow: hidden;
+  /* color: black;  */
+  transition: color 0.4s linear;
+}
+
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 100%;
+  background: white;
+  border: 5px;
+  /* border-top-right-radius: 5px; */
+  transition: top 0.9s ease;
+  z-index: -1;
+}
+.contact-btn:hover {
+  color: black;
+  z-index: 1;
+}
+
+.contact-btn:hover::before {
+  top: 0;
+}
+
+.arrow-btn {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s linear;
+}
+
+.arrow-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 100%;
+  background: black;
+  transition: top 0.4s ease;
+  z-index: -1;
+}
+.arrow-btn:hover {
+  color: white;
+  z-index: 1;
+}
+
+.arrow-btn:hover::before {
+  top: 0;
+}
+
+/* .button_slide {
+  color: #fff;
+  /* border: 2px solid rgb(216, 2, 134); */
+  /* border-radius: 0px; */
+  /* padding: 18px 36px; */
+  /* display: inline-block; */
+  /* font-family: "Lucida Console", Monaco, monospace; */
+  /* font-size: 14px; */
+  /* letter-spacing: 1px; */
+  /* cursor: pointer; */
+  /* box-shadow: inset 0 0 0 0 #D80286; */
+  /* box-shadow: inset 0 0 0 0 white;
+
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.9s;
+} */
+
+/* .slide_down:hover {
+  box-shadow: inset 0 100px 0 0 #d80286;
+}
+.slide_up {
+  /* box-shadow: inset 0 0 0 0 #D80286; */
+  /* box-shadow: inset 0 0 0 0 white;
+}
+
+.slide_up:hover {
+  box-shadow: inset 0 -100px 0 0 white; */
+  /* border-radius: 5px; */
+
+  /* box-shadow: inset 0 -100px 0 0 #D80286; Change direction to create the slide up effect */
+/* }
+.slide_right:hover {
+  box-shadow: inset 400px 0 0 0 #d80286;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #d80286;
+}
+
+.slide_diagonal:hover {
+  box-shadow: inset 400px 50px 0 0 #d80286; */
+/* }
+
+#outer {
+  width: 364px;
+  margin: 50px auto 0 auto;
+  text-align: center;
+} */ 

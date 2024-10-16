@@ -1,0 +1,59 @@
+// import Wrapper from "../Layouts/Wrapper";
+// // import PageWrapper from "../Layouts/Wrapper";
+// import {
+//   HomeBanner,
+//   Partnership,
+//   HomeAbout,
+//   Cards,
+//   PillarCards,
+//   Collabiration,
+//   CaseStudy,
+//   Clientele,
+//   FractionalMarketing,
+//   FractionalMarketingAccordion,
+// } from "../components";
+
+
+// const Home = () => {
+//   return (
+//     <Wrapper>
+//       <HomeBanner />
+//       <div className="px-[69px] mobiles:px-[20px] ">
+//         <HomeAbout />
+//       </div>
+//       <div className="ml-[101px] mobiles:mt-8  tablets:px-[69px] tablets:ml-0 tablets:mt-10 mobiles:px-[20px] ">
+//         <Partnership />
+//       </div>
+//       <div className="mt-28 ml-[91px] mr-[63px] tablets:mr-0 mobiles:mr-0  tablets:px-[69px] tablets:ml-0 tablets:mt-10 mobiles:px-[20px]   ">
+//         <Cards />
+//       </div>
+//       <div className="mt-28 ml-[122px] mr-[104px] tablets:mr-0  tablets:pl-[69px] tablets:pr-[20px] tablets:ml-0 tablets:mt-10 mobiles:px-[20px] ">
+//         <PillarCards />
+//       </div>
+//       {/*  mobiles:mt-[60px] mobiles:mx-[30px] */}
+//       <div className="mx-[78px] mt-[114px]  tablets:ml-[69px] tablets:mt-36 mobiles:px-[20px] mobiles:mx-0 ">
+//         <Collabiration />
+//       </div>
+//       {/* tablets:mt-20 mobiles:mt-[60px] mobiles:mx-[30px] */}
+//       <div className="mt-[80px] ml-[73px] mr-[45px] mobiles:mr-0 mobiles:mt-10  tablets:px-[69px] tablets:ml-0 tablets:mt-36 mobiles:px-[20px]  ">
+//         <CaseStudy />
+//       </div>
+//       {/* mobiles:mt-[60px] mobiles:mx-[30px] */}
+//       <div className="mt-[76px] ml-[94px]  tablets:px-[69px] tablets:ml-0 tablets:mt-36 mobiles:px-[20px] ">
+//         <Clientele />
+//       </div>
+//       {/*  mobiles:mt-[60px] mobiles:mx-[30px]*/}
+//       <div className="min-h-[333px]  border-y-[1px] mt-12">
+//         <div className="mt-[45px] ml-[94px]   tablets:px-[69px] tablets:ml-0 tablets:mt-20 mobiles:px-[20px] ">
+//           <FractionalMarketing />
+//         </div>
+//       </div>
+//       {/* mobiles:mt-[60px] mobiles:mx-[30px] */}
+//       <div className="mt-[25px] mr-[117px] tablets:mr-0   ml-[37px] mobiles:mr-0   tablets:px-[69px] tablets:ml-0 tablets:mt-36 mobiles:px-[20px] ">
+//         <FractionalMarketingAccordion />
+//       </div>
+//     </Wrapper>
+//   );
+// };
+
+// export default Home;
