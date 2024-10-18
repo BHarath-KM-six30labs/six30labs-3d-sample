@@ -4,6 +4,7 @@ import ComponentSvg1 from "./ComponentSvg1";
 import ComponentSvg2 from "./ComponentSvg2";
 import Carousel from "./Carousel";
 import { useWindowWidth } from "../utils/hooks/useWindowWidth";
+import ScrollAdjustedText from "./ScrollAdjustedText";
 
 const Card = ({ imageSrc, altText, title, description }) => {
   return (
@@ -53,7 +54,11 @@ export default function Home() {
   return (
     <div className="font-sans">
       {/* Vertical Scroll Section */}
-      <section className={`flex    p-8 ${width < 1050 ? "flex-col mb-10" : "h-screen"}`}>
+      <section
+        className={`flex    p-8 ${
+          width < 1050 ? "flex-col mb-10" : "h-screen"
+        }`}
+      >
         <div className="flex flex-col flex-1 items-center justify-center ">
           <h2 className="text-3xl font-bold mb-4">Vertical Scroll Section</h2>
           <p className="mb-4 ">This section scrolls vertically as normal.</p>
@@ -61,7 +66,11 @@ export default function Home() {
             Keep scrolling down to see the horizontal section.
           </p>
         </div>
-        <div className={`flex-col flex-1 ${width < 1050 ? "flex mt-20  mx-auto w-52 h-52  " : ""}`}>
+        <div
+          className={`flex-col flex-1 ${
+            width < 1050 ? "flex mt-20  mx-auto w-52 h-52  " : ""
+          }`}
+        >
           <ComponentSvg2 />
         </div>
       </section>
@@ -69,7 +78,6 @@ export default function Home() {
       {/* Horizontal Scroll Section Container */}
       {width < 1050 ? (
         <div className="mb-20">
-
           <Carousel />
         </div>
       ) : (
@@ -106,6 +114,19 @@ export default function Home() {
       )}
 
       {/* Normal Scroll Section */}
+      <section className="min-h-screen  p-8">
+        <h2 className="text-3xl font-bold mb-4">Normal Scroll Section</h2>
+        <p className="mb-4">This section scrolls vertically again.</p>
+        <p className="mb-4">You've reached the end of the page!</p>
+        {[1, 2, 3, 4, 5].map((num) => (
+          <p key={num} className="mb-4">
+            Additional content paragraph {num}.
+          </p>
+        ))}
+      </section>
+      <section>
+        <ScrollAdjustedText />
+      </section>
       <section className="min-h-screen  p-8">
         <h2 className="text-3xl font-bold mb-4">Normal Scroll Section</h2>
         <p className="mb-4">This section scrolls vertically again.</p>
